@@ -2,8 +2,10 @@ package com.edutia.babyteam.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Goods {
+public class Goods implements Serializable {
 
     private Long goodsId;
     private String title;

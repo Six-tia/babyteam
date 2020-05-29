@@ -95,19 +95,9 @@
             </ul>
             <div class="layui-tab-content">
                 <div class="layui-tab-item layui-show bb-description layui-col-xs8 layui-col-xs-offset2">
-                    <img src="http://img02.meituncdn.com/group1/M00/8E/F1/f10f05fe0ce149d8b01d704b8e48d9cb.jpg">
-                    <img src="http://img01.meituncdn.com/group1/M00/47/31/fc17706447314d32acb89c8fd9af328f.jpg">
-                    <img src="http://img03.meituncdn.com/group1/M00/D7/1C/715dadd2b46145f98591ced7a6dd2db2.jpg">
-                    <img src="http://img02.meituncdn.com/group1/M00/6A/8C/b6af58e38f8c47778ece2dcc808550f7.jpg">
-                    <img src="http://img04.meituncdn.com/group1/M00/7C/A7/6ace72c2cab24294a7797ce5af6093bc.jpg">
-                    <img src="http://img02.meituncdn.com/group1/M00/A7/CA/60a34e86b547408da78cc5ca0bc41d07.jpg">
-                    <img src="http://img02.meituncdn.com/group1/M00/B8/75/cb8f05e27cd84e31b8f7f269175941ac.jpg">
-                    <img src="http://img05.meituncdn.com/group1/M00/6D/23/f6d26edbea7d4fa4aa5889fe23a546b4.jpg">
-                    <img src="http://img05.meituncdn.com/group1/M00/A4/D6/8738b21a741e4d369b6454a4ea01d622.jpg">
-                    <img src="http://img01.meituncdn.com/group1/M00/06/21/5f53ed18ba4948e9ba52140560060770.jpg">
-                    <img src="http://img04.meituncdn.com/group1/M00/C2/A3/c201ad7da34c4738a479febedc643fbb.jpg">
-                    <img src="http://img03.meituncdn.com/group1/M00/49/14/dd750f514bf041d48262a3a191d49baf.jpg">
-                    <img src="http://img01.meituncdn.com/group1/M00/0D/0D/07813fecb8b74bc8a869360dafc65877.jpg">
+                    <#list details as d>
+                        <img src = "${d.gdPicUrl}">
+                    </#list>
                 </div>
                 <div class="layui-tab-item layui-col-xs8 layui-col-xs-offset2">
                     <table class="layui-table bb-param" lay-size="lg">
@@ -116,19 +106,12 @@
                             <col width="70%">
                         </colgroup>
                         <tbody>
+                        <#list params as p>
                         <tr>
-                            <td>品牌</td>
-                            <td>哇爱</td>
+                            <td>${p.gpParamName}</td>
+                            <td>${p.gpParamValue}</td>
                         </tr>
-                        <tr>
-                            <td>重量</td>
-                            <td>1050g</td>
-                        </tr>
-                        <tr>
-                            <td>产地</td>
-                            <td>广州</td>
-                        </tr>
-
+                        </#list>
                         </tbody>
                     </table>
                 </div>

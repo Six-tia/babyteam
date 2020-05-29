@@ -2,12 +2,14 @@ package com.edutia.babyteam.controller;
 
 import com.edutia.babyteam.entity.Goods;
 import com.edutia.babyteam.service.GoodsService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @Controller
 public class GoodsController {
 
@@ -21,10 +23,13 @@ public class GoodsController {
     // setAttribute方法的作用，用来在一个请求过程中传递处理的数据。
     @GetMapping("/goods")
     public ModelAndView showGoods(Long gid){
+        //log.info("gid = " + gid);
         ModelAndView mav = new ModelAndView("/goods");
         Goods goods = goodsService.getGoods(gid);
         mav.addObject("goods", goods);
         mav.addObject("covers", goodsService.findCovers(gid));
+        mav.addObject("details", goodsService.findDetails(gid));
+        mav.addObject("params", goodsService.findParams(gid));
         return mav;
     }
 }
